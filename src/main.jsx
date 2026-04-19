@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import App from './App'
 import store from './store'
-import { card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
+import { card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, gray3, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
 
 function Main() {
   const [mode, setMode] = useState('light')
@@ -47,6 +47,9 @@ imagecard:mode  === 'light' ? mainColor : darkblue,
     primary: mode === 'light' ?'rgba(113, 127, 166, 1)':'rgba(161, 169, 195, 1)' ,
     secondary: mode === 'light' ? darkblack : darkgray, 
     textcard:mode  === 'light' ? darkblue : darkgray,
+        textc:mode  === 'light' ? darkblue : lighttext,
+        textt:mode  === 'light' ? gray3 : lighttext,
+
         textlight:mode  === 'light' ? lighttext : lighttext,
         cardlight:mode  === 'light' ? gray1 : lighttext,
 

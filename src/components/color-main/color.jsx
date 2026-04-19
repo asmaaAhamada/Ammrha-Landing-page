@@ -7,6 +7,7 @@ export const lightgray='rgba(161, 185, 195, 1)'
 export const lighttext='rgba(161, 169, 195, 1)'
 export const gray1='rgba(113, 127, 166, 1)'
 export const gray2='rgba(238, 242, 255, 1)'
+export const gray3='rgba(98, 116, 142, 1)'
 
 
 

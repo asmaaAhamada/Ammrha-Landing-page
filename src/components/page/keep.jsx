@@ -1,138 +1,152 @@
-import React from "react";
-import { Box, Typography, Button, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
-import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';import people from '../../assets/image/logo/ImageWithFallback.png';
-
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  useTheme
+} from "@mui/material";
+import image1 from '../../assets/image/ImageWithFallback-3.png'
+import image2 from '../../assets/image/ImageWithFallback-2.png'
+import image3 from '../../assets/image/ImageWithFallback-1.png'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default function Keep() {
   const theme = useTheme();
 
+  const data = [
+  
+    {
+      image: image3,
+      title: "عنوان الفعالية",
+      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+    },
+    {
+      image: image2,
+      title: "عنوان الفعالية",
+      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+    },
+    {
+      image: image1,
+      title: "عنوان الفعالية",
+      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+    }
+  ];
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: { xs: "column", md: "row-reverse" }, // ترتيب العناصر (نص يمين، صورة يسار)
-        gap: { xs: 4, md: 10 },
-        px: { xs: 2, md: 8 },
-        py: { xs: 6, md: 10 },
-        minHeight: "70vh",
-      }}
-    >
-      {/* القسم الأيمن: النص */}
-      <Box
+    <Box sx={{ mt: 16 }}>
+      {/* العناوين */}
+      <Typography
         sx={{
-          flex: "1",mr:9,
-          textAlign: "right", // محاذاة النص لليمين
-          direction: "rtl",   // لضمان تنسيق اللغة العربية
+          fontSize: "16px",
+          color: theme.palette.text.textcard,
+          fontWeight: 600,
+          mb: 1,
+          display: "flex",
+          justifyContent: "center"
         }}
       >
-        {/* عنوان صغير فرعي */}
-        <Typography
-          sx={{
-            fontSize: "16px",
-            color: theme.palette.text.textcard,
-            fontWeight: 600,
-            mb: 1,
-            position: "relative",
-            display: "inline-block",
-           
-          }}
-        >
-          من نحن
-        </Typography>
+        ابق على إطلاع
+      </Typography>
 
-        {/* العنوان الرئيسي */}
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: 700,
-            fontSize: { xs: "16px", md: "28px" },
-            color: theme.palette.text.secondary,
-            lineHeight: 1.3,
-            mb: 3,
-            maxWidth: "550px",
-          }}
-        >
-          تمكين المجتمعات من خلال العمل التطوعي
-        </Typography>
+      <Typography
+        sx={{
+          fontWeight: 700,
+          fontSize: { xs: "16px", md: "28px" },
+          color: theme.palette.text.textc,
+          mb: 5,
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        أهم الفعاليات
+      </Typography>
 
-        {/* الوصف */}
-        <Typography
-          sx={{
-            fontWeight: 400,
-            fontSize: "18px",
-            color: theme.palette.text.primary,
-            maxWidth: "530px",
-            lineHeight: 1.8,
-            mb: 4,
-          }}
-        >
-          نربط الأفراد الشغوفين بفرص ذات مغزى، وتعمل منصتنا على تبسيط إدارة العمل التطوعي للمؤسسات من كافة الأحجام، مما يسهل تنسيق المساهمات وتتبعها والاحتفاء بها.
-        </Typography>
-
-        {/* الزر */}
-        <Link to="/about" style={{ textDecoration: "none" }}>
-          <Button
+      {/* الكروت */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, 348px)",
+          gap: 3,
+          justifyContent: "center"
+        }}
+      >
+        {data.map((item, index) => (
+          <Card
+            key={index}
             sx={{
-              color: theme.palette.text.secondary1,
-              backgroundColor:theme.palette.primary.more,
-              border:`4px 2px solid ${theme.palette.primary.moreborder}`,
-              borderRadius: "12px",
-             
-              fontSize: "16px",
-              textTransform: "none",
-              borderWidth: "1px",
-              "&:hover": {
-                borderWidth: "1px",
-                backgroundColor: "rgba(255,255,255,0.05)",
-              }
+              width: "348px",
+              height: "330px",
+              borderRadius: "16px",
+              backgroundColor: theme.palette.primary.card,
+              boxShadow: "2px 5px 2px rgba(2, 3, 3, 0.21)",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden"
             }}
           >
-            لمعرفة المزيد من نحن...
-                        <ExpandMoreOutlinedIcon sx={{mr:3}}/>
+            {/* الصورة */}
+            <Box
+              component="img"
+              src={item.image}
+              sx={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                alignSelf: "center",
+                
+                
+              }}
+            />
 
-          </Button>
-        </Link>
-      </Box>
+            {/* المحتوى */}
+            <CardContent
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                flexGrow: 1,
+                gap: 1
+              }}
+            >
+              {/* العنوان */}
+              <Typography
+                sx={{
+                  fontWeight: "bold",
+                  color: theme.palette.text.secondary,
+                  fontSize: "16px",alignItems:'rtl'
+                }}
+              >
+                {item.title}
+              </Typography>
 
-      {/* القسم الأيسر: الصورة مع الخلفية الزرقاء */}
-      <Box
-        sx={{
-          position: "relative",
-          flex: "1",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {/* المربع الخلفي الملون (Decoration Box) */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: { xs: "300px", md: "532px" },
-            height: { xs: "200px", md: "288px" },
-            backgroundColor: theme.palette.primary.imagecard,
-            borderRadius: "16px",
-            top: { md: "-20px" },
-            left: { md: "-10px" },
-            zIndex: 0,
-          }}
-        />
+              {/* الوصف */}
+              <Typography
+                sx={{
+                  color: theme.palette.text.textt,
+                  fontSize: "14px"
+                }}
+              >
+                {item.desc}
+              </Typography>
 
-        {/* الصورة الفعلية */}
-        <Box
-          component="img"
-          src={people}
-          alt="volunteers"
-          sx={{
-            width: { xs: "100%", md: "532px" },
-            height: { xs: "200px", md: "288px" },
-            borderRadius: "16px",
-            zIndex: 1,
-            objectFit: "cover",
-          }}
-        />
+              {/* الزر */}
+              <Button
+                variant="contained"
+                sx={{
+                  width: "265px",
+                  height: "48px",
+                  borderRadius: "12px",
+                  mt: "auto",fontSize:'16px',
+                bgcolor: theme.palette.primary.button,
+                }}
+              >
+                <ArrowForwardIosIcon sx={{ transform: "rotate(180deg)", fontSize:'24px' ,mr:4 }} />
+                قراءة المزيد
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
     </Box>
   );
