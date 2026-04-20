@@ -17,6 +17,8 @@ function Main() {
   mode,    
   primary: {
         Appar: mode === 'light' ? mainColor :  'rgba(8, 16, 42, 1)' ,
+                Appar2: mode === 'light' ? darkblue :  'rgba(8, 16, 42, 1)' ,
+
     text:mode === 'light' ? 'rgba(66, 84, 136, 1)' : darkgray,//لون التنقلات عالناف
 button: mode === 'light' ? darkblue :'rgba(59, 133, 254, 1)',
 more: mode === 'light' ? darkblue : darkblack,
@@ -34,7 +36,7 @@ imagecard:mode  === 'light' ? mainColor : darkblue,
 
     // أزرق رئيسي لللايت، أزرق فاتح للدارك
     contrastText:mode === 'light' ?'#ffffffff' : '#000000',
-    text4:mode === 'light' ? '#9819d2ff' : '#ffffff',
+    text4:mode === 'light' ? white : lighttext,
     text3:mode === 'light' ? 'rgb(14, 10, 15)' : '#9819d2ff',
 
     // لون النص على الأزرار

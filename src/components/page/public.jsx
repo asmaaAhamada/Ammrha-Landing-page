@@ -4,6 +4,8 @@ import Fetuers from "./fetuers";
 import Who from "./Who-We-Are";
 import Attribuits from "./attribute";
 import Keep from "./keep";
+import Ready from "./ready";
+import Communication from "./communcation";
 
 
 export default function Public(){
@@ -14,6 +16,8 @@ export default function Public(){
     <Who/>
     <Attribuits/>
     <Keep/>
+    <Ready/>
+    <Communication/>
     </>
     )
 }

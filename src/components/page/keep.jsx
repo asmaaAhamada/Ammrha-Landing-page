@@ -5,11 +5,13 @@ import {
   Typography,
   Button,
   useTheme
-} from "@mui/material";
+} from "@mui/material";import { Chip } from "@mui/material";
+
 import image1 from '../../assets/image/ImageWithFallback-3.png'
 import image2 from '../../assets/image/ImageWithFallback-2.png'
 import image3 from '../../assets/image/ImageWithFallback-1.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { darkblue, white } from "../color-main/color";
 export default function Keep() {
   const theme = useTheme();
 
@@ -17,16 +19,22 @@ export default function Keep() {
   
     {
       image: image3,
+          date: "12 مكبنمتلم",
+
       title: "عنوان الفعالية",
       desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
     },
     {
       image: image2,
+          date: "12 ممكتمملكمايو",
+
       title: "عنوان الفعالية",
       desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
     },
     {
       image: image1,
+          date: "12 مايو",
+
       title: "عنوان الفعالية",
       desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
     }
@@ -86,6 +94,13 @@ export default function Keep() {
           >
             {/* الصورة */}
             <Box
+  sx={{
+    position: "relative",
+    width: "100%",
+    height: "176px" // مهم عشان نثبت مساحة الصورة
+  }}
+>
+            <Box
               component="img"
               src={item.image}
               sx={{
@@ -97,7 +112,15 @@ export default function Keep() {
                 
               }}
             />
-
+           <Chip
+  label={item.date}
+  sx={{
+    position: "absolute",width:'108px',height:'24px',
+    top: 10,
+    left: 10,backgroundColor:theme.palette.primary.text4,color:darkblue
+  }}
+/>
+</Box>
             {/* المحتوى */}
             <CardContent
               sx={{
@@ -134,11 +157,12 @@ export default function Keep() {
               <Button
                 variant="contained"
                 sx={{
-                  width: "265px",
+                  width: "256px",
                   height: "48px",
                   borderRadius: "12px",
                   mt: "auto",fontSize:'16px',
-                bgcolor: theme.palette.primary.button,
+                bgcolor: theme.palette.primary.button,                color: white,
+                
                 }}
               >
                 <ArrowForwardIosIcon sx={{ transform: "rotate(180deg)", fontSize:'24px' ,mr:4 }} />
