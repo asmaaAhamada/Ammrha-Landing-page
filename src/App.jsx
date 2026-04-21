@@ -2,9 +2,9 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Who from './components/page/ApparPages/home/Who-We-Are'
-import Join from './components/page/ApparPages/home/Join-Us'
 import Public from './components/page/ApparPages/home/public'
 import AboutUs from './components/page/ApparPages/ABOUT/AbouteUs'
+import Join from './components/page/ApparPages/comuncate/comunty'
 
 
 
@@ -31,7 +31,6 @@ export default function App({toggleMode, mode}){
 {/* <Route path="/Continue" element={<Continue />} /> */}
       <Route path="/contact" element={<Join />} />
 
-        {/* <Route path="/conect" element={<ConectPage />} /> */}
 
 
 </Route>

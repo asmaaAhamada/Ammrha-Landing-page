@@ -45,13 +45,11 @@ export default function HomePage() {
           px: { xs: 2, sm: 4, md: 10 },
           py: { xs: 2, md: 0 },
           zIndex: 2,
-         background: {
-  xs: "rgba(0,0,0,0.55)", // للموبايل
-  md: `linear-gradient(90deg, 
+         background: `linear-gradient(90deg, 
        rgba(15, 33, 85, 0.9) 0%, 
        rgba(66, 84, 136, 0.8) 50%, 
        rgba(113, 127, 166, 0.6) 100%)`, // تدرج الألوان التي أرسلتها
-},
+
         }}
       >
         <Chip

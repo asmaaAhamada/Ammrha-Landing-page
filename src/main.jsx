@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import App from './App'
 import store from './store'
-import { card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, gray3, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
+import { blue, card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, gray3, gray4, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
 
 function Main() {
   const [mode, setMode] = useState('light')
@@ -30,6 +30,7 @@ card:mode  === 'light' ? card : darkcard,
 textheadr:mode  === 'light' ? textheder : darkgray,//الكلام يلي مكتوب على من نحن
 
 imagecard:mode  === 'light' ? mainColor : darkblue,
+imagcard:mode  === 'light' ? white : lightgray,
 
     main: mode === 'light' ?  'rgba(232, 234, 241, 1)' :  'rgba(8, 16, 42, 1)',
         main1: mode === 'light' ? 'rgb(247, 239, 247)' : '#c911eeff', // أزرق رئيسي لللايت، أزرق فاتح للدارك
@@ -37,7 +38,7 @@ imagecard:mode  === 'light' ? mainColor : darkblue,
     // أزرق رئيسي لللايت، أزرق فاتح للدارك
     contrastText:mode === 'light' ?'#ffffffff' : '#000000',
     text4:mode === 'light' ? white : lighttext,
-    text3:mode === 'light' ? 'rgb(14, 10, 15)' : '#9819d2ff',
+    text3:mode === 'light' ? gray4 : blue,
 
     // لون النص على الأزرار
   },

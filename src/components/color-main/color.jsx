@@ -8,8 +8,9 @@ export const lighttext='rgba(161, 169, 195, 1)'
 export const gray1='rgba(113, 127, 166, 1)'
 export const gray2='rgba(238, 242, 255, 1)'
 export const gray3='rgba(98, 116, 142, 1)'
+export const gray4= 'rgba(144, 161, 185, 1)';
 
-
+export const gray5='rgba(202, 213, 226, 1)'
 
 
 export const card ='rgba(248, 250, 252, 1)'
