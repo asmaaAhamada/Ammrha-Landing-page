@@ -22,7 +22,7 @@ import { Link, useLocation } from 'react-router-dom';
 // icons
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import ButtonJoin from '../page/Button/join';
+import ButtonJoin from '../page/ApparPages/home/Button/join';
 
 const drawerWidth = 240;
 
@@ -33,7 +33,7 @@ const navItems = [
   },
   {
     label: 'من نحن',
-    path: '/about',order: 2
+    path: '/about-us',order: 2
   },
   {
     label: 'تواصل معنا',

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import Layout from './components/layout/Layout'
-import HomePage from './components/page/HomePage'
-import Who from './components/page/Who-We-Are'
-import Join from './components/page/Join-Us'
-import Public from './components/page/public'
+import Who from './components/page/ApparPages/home/Who-We-Are'
+import Join from './components/page/ApparPages/home/Join-Us'
+import Public from './components/page/ApparPages/home/public'
+import AboutUs from './components/page/ApparPages/ABOUT/AbouteUs'
 
 
 
@@ -27,7 +27,7 @@ export default function App({toggleMode, mode}){
 <Route index element={<Public />} />
     <Route path="/" element={<Public />} />
 
-    <Route path="/about" element={<Who />} />
+    <Route path="/about-us" element={<AboutUs />} />
 {/* <Route path="/Continue" element={<Continue />} /> */}
       <Route path="/contact" element={<Join />} />
 

@@ -7,11 +7,11 @@ import {
   useTheme
 } from "@mui/material";import { Chip } from "@mui/material";
 
-import image1 from '../../assets/image/ImageWithFallback-3.png'
-import image2 from '../../assets/image/ImageWithFallback-2.png'
-import image3 from '../../assets/image/ImageWithFallback-1.png'
+import image1 from '../../../../assets/image/ImageWithFallback-3.png'
+import image2 from '../../../../assets/image/ImageWithFallback-2.png'
+import image3 from '../../../../assets/image/ImageWithFallback-1.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { darkblue, white } from "../color-main/color";
+import { darkblue, white } from "../../../color-main/color";
 export default function Keep() {
   const theme = useTheme();
 
@@ -48,9 +48,17 @@ export default function Keep() {
           fontSize: "16px",
           color: theme.palette.text.textcard,
           fontWeight: 600,
-          mb: 1,
-          display: "flex",
-          justifyContent: "center"
+          mb: 1,position: "relative", // 👈 مهم
+
+                display: 'flex',justifyContent:'center', "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: -0.3, // المسافة تحت النص
+      width: "22px",
+      height: "1px",
+      backgroundColor: "rgba(244, 185, 70, 1)",
+      
+    }
         }}
       >
         ابق على إطلاع

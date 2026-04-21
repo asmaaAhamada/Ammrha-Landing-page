@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
-import { card, darkblue } from "../color-main/color";
+import { card, darkblue } from "../../../color-main/color";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
@@ -22,8 +22,17 @@ export default function Attribuits() {
                 color: theme.palette.text.textcard,
                 fontWeight: 600,
                 mb: 1,
-               alignItems:'center',
-                display: 'flex',justifyContent:'center'
+               alignItems:'center',    position: "relative", // 👈 مهم
+
+                display: 'flex',justifyContent:'center', "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: -0.3, // المسافة تحت النص
+      width: "22px",
+      height: "1px",
+      backgroundColor: "rgba(244, 185, 70, 1)",
+      
+    }
                
               }}
             >

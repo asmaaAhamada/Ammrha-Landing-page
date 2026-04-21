@@ -7,11 +7,11 @@ import {
   useTheme
 } from "@mui/material";import { Chip } from "@mui/material";
 
-import image1 from '../../assets/image/ImageWithFallback-3.png'
-import image2 from '../../assets/image/ImageWithFallback-2.png'
-import image3 from '../../assets/image/ImageWithFallback-1.png'
+import image1 from '../../../../assets/image/ImageWithFallback-3.png'
+import image2 from '../../../../assets/image/ImageWithFallback-2.png'
+import image3 from '../../../../assets/image/ImageWithFallback-1.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { darkblue, white } from "../color-main/color";
+import { darkblue, white } from "../../../color-main/color";
 export default function Ready() {
   const theme = useTheme();
 

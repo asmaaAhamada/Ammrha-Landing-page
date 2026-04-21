@@ -14,8 +14,8 @@ import { useTheme } from '@mui/material/styles';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import logo from '../../assets/image/logo/Logo Container.svg'
-import { lighttext, mainColor } from "../color-main/color";
+import logo from '../../../../assets/image/logo/Logo Container.svg'
+import { lighttext, mainColor } from "../../../color-main/color";
 export default function Communication() {
   const theme = useTheme();
   return (

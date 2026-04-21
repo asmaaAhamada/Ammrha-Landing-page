@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
-import { card, darkblue } from "../color-main/color";
+import { card, darkblue } from "../../../color-main/color";
 import { ThemeContext } from "@emotion/react";
 
 export default function Fetuers() {

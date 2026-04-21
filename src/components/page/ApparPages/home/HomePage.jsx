@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography, Button ,Chip, Toolbar, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
-import r1 from "../../assets/image/logo/ImageWithFallback5.png";
+import r1 from "../../../../assets/image/logo/ImageWithFallback5.png";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import  {gray, mainColor} from '../color-main/color'
+import  {gray, mainColor} from '../../../color-main/color'
 import ButtonJoin from "./Button/join";
 import ButtonConect from "./Button/conect";
 export default function HomePage() {

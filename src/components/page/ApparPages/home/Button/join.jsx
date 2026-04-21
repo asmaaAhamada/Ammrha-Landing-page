@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
-import { white } from "../../color-main/color";
+import { white } from "../../../../color-main/color";
 
 
 export default function ButtonJoin(){

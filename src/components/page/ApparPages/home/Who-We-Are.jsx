@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
-import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';import people from '../../assets/image/logo/ImageWithFallback.png';
+import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
+import people from '../../../../assets/image/logo/ImageWithFallback.png';
 
 export default function Who() {
   const theme = useTheme();
@@ -28,19 +29,28 @@ export default function Who() {
         }}
       >
         {/* عنوان صغير فرعي */}
-        <Typography
-          sx={{
-            fontSize: "16px",
-            color: theme.palette.text.textcard,
-            fontWeight: 600,
-            mb: 1,
-            position: "relative",
-            display: "inline-block",
-           
-          }}
-        >
-          من نحن
-        </Typography>
+      <Typography
+  sx={{
+    fontSize: "16px",
+    color: theme.palette.text.textcard,
+    fontWeight: 600,
+    mb: 1,
+    position: "relative",
+    display: "inline-block",
+
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: -1,
+      width: "22px",
+      height: "1px",
+      backgroundColor: "rgba(244, 185, 70, 1)",
+      right: 0 // 👈 هون الحل
+    }
+  }}
+>
+  من نحن
+</Typography>
 
         {/* العنوان الرئيسي */}
         <Typography
@@ -72,7 +82,7 @@ export default function Who() {
         </Typography>
 
         {/* الزر */}
-        <Link to="/about" style={{ textDecoration: "none" }}>
+        <Link to="/about-us" style={{ textDecoration: "none" }}>
           <Button
             sx={{
               color: theme.palette.text.secondary1,
