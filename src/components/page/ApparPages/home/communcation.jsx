@@ -65,7 +65,7 @@ export default function Communication() {
 
 <Link
   component={RouterLink}
-  to="/about"
+  to="/about-us"
   underline="none"
   sx={{ color: theme.palette.text.cardlight }}
 >
@@ -110,6 +110,10 @@ export default function Communication() {
             </Typography>
             <Stack direction="row" spacing={1}>
           <IconButton
+           component="a"
+  href="https://www.facebook.com/Ammrhafoundation"
+  target="_blank"
+  rel="noopener noreferrer"
                 sx={{
                   width: "36px",
                   height: "36px",
@@ -123,6 +127,10 @@ export default function Communication() {
               </IconButton>
 
 <IconButton
+ component="a"
+  href="https://www.instagram.com/ammrha_foundation?igsh=MXN1Mm1yYjV5N2dzOQ=="
+  target="_blank"
+  rel="noopener noreferrer"
                 sx={{
                   width: "36px",
                   height: "36px",

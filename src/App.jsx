@@ -6,6 +6,7 @@ import Public from './components/page/ApparPages/home/public'
 import AboutUs from './components/page/ApparPages/ABOUT/AbouteUs'
 import Join from './components/page/ApparPages/comuncate/comunty'
 import JOIN_US from './components/page/ApparPages/join/Join-Us'
+import Details from './components/page/ApparPages/home/keep/detail/details'
 
 
 
@@ -29,7 +30,7 @@ export default function App({toggleMode, mode}){
     <Route path="/" element={<Public />} />
 
     <Route path="/about-us" element={<AboutUs />} />
-{/* <Route path="/Continue" element={<Continue />} /> */}
+<Route path="/details/:id" element={<Details/>} />
       <Route path="/contact" element={<Join />} />
  <Route path="/Join" element={<JOIN_US />} /> 
 

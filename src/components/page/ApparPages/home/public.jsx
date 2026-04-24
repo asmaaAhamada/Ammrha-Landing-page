@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 import Fetuers from "./fetuers";
 import Who from "./Who-We-Are";
 import Attribuits from "./attribute";
-import Keep from "./keep";
+import Keep from "./keep/keep";
 import Ready from "./ready";
 import Communication from "./communcation";
 

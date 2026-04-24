@@ -7,36 +7,40 @@ import {
   useTheme
 } from "@mui/material";import { Chip } from "@mui/material";
 
-import image1 from '../../../../assets/image/ImageWithFallback-3.png'
-import image2 from '../../../../assets/image/ImageWithFallback-2.png'
-import image3 from '../../../../assets/image/ImageWithFallback-1.png'
+import image1 from '../../../../../assets/image/12.png'
+import image2 from '../../../../../assets/image/13.jpg'
+import image3 from '../../../../../assets/image/14.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { darkblue, white } from "../../../color-main/color";
+import { darkblue, white } from "../../../../color-main/color";
+import { Link } from "react-router-dom";
 export default function Keep() {
   const theme = useTheme();
 
   const data = [
   
     {
+       id: 3,
       image: image3,
-          date: "12 مكبنمتلم",
+          date: "10 أيلول",
 
       title: "عنوان الفعالية",
-      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+      desc: "حين يقترن الشغف بالتوجيه السليم، يغدو المستقبل أكثر وضوحًا وإشراقًا."
     },
     {
+       id: 2,
       image: image2,
-          date: "12 ممكتمملكمايو",
+          date: "20 تشرين الثاني",
 
-      title: "عنوان الفعالية",
-      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+      title: "يوم الطفل العالمي",
+      desc: "نزرع بذور الفرح لنجني مستقبل مشرق يليق ببراءة الطفولة"
     },
     {
+       id: 1,
       image: image1,
-          date: "12 مايو",
+          date: "27 رمضان",
 
-      title: "عنوان الفعالية",
-      desc: "وصف مختصر عن الفعالية أو النشاط التطوعي"
+      title: "ليلة القدر",
+      desc: "أمّا العطاء، فهو جوهر هذه الليلة؛"
     }
   ];
 
@@ -165,6 +169,7 @@ export default function Keep() {
               </Typography>
 
               {/* الزر */}
+              <Link to={`/details/${item.id}`} style={{ textDecoration: 'none' }} >
               <Button
                 variant="contained"
                 sx={{
@@ -179,6 +184,7 @@ export default function Keep() {
                 <ArrowForwardIosIcon sx={{ transform: "rotate(180deg)", fontSize:'24px' ,mr:4 }} />
                 قراءة المزيد
               </Button>
+              </Link>
             </CardContent>
           </Card>
         ))}
