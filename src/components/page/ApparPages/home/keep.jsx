@@ -81,7 +81,10 @@ export default function Keep() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, 348px)",
+          gridTemplateColumns: {
+          xs: "1fr",
+          md: "repeat(auto-fill, 348px)",
+        },
           gap: 3,
           justifyContent: "center"
         }}
@@ -90,7 +93,7 @@ export default function Keep() {
           <Card
             key={index}
             sx={{
-              width: "348px",
+              width: "100%",
               height: "330px",
               borderRadius: "16px",
               backgroundColor: theme.palette.primary.card,

@@ -52,7 +52,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';export default
 قيمنا الجوهرية            </Typography>
     <Box
   sx={{
-    display: "grid",
+    display: "grid", 
     gridTemplateColumns: {
       xs: "1fr",
       md: "repeat(2, 476px)", // 👈 2 جنب بعض
@@ -67,7 +67,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';export default
   sx={{
     backgroundColor: theme.palette.primary.card,
     color: theme.palette.text.textcard,
-    width: "476px",
+    width: '100%',
     height: "97px",
     display: "flex",
     flexDirection: "row", // 👈 مهم (أفقي)

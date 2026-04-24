@@ -12,6 +12,8 @@ export const gray4= 'rgba(144, 161, 185, 1)';
 
 export const gray5='rgba(202, 213, 226, 1)'
 
+export const black=' rgba(4, 8, 21, 1)';
+
 
 export const card ='rgba(248, 250, 252, 1)'
 export const darkcard ='rgba(8, 16, 42, 1)'

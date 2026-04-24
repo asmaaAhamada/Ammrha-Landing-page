@@ -120,7 +120,7 @@ export default function Section2() {
           <Paper 
             elevation={0} 
             sx={{ 
-              height: '224px', width:'366px',
+              height: '224px', width:{xs: "100%",md:'366px'},
               bgcolor: '#f0f5fa', 
               borderRadius: '24px', 
               display: 'flex', 

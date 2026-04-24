@@ -62,7 +62,7 @@ export default function Ready() {
       <Button
                 variant="contained"
                 sx={{
-                  width: "512px",
+                  width: { xs: "196px", md: "512px" },
                   height: "43px",
                   borderRadius: "12px",
                  fontSize:'16px',                color: white,

@@ -70,7 +70,7 @@ function DrawerAppBar(props) {
                 component={Link}
                 to={item.path}
                 sx={{
-                  gap: 2,
+                  gap: {xs:1,md:2},
                   color: isActive ? theme.palette.primary.text : 'rgba(113, 127, 166, 1)',
 
                   bgcolor: isActive ? theme.palette.action.selected : 'transparent',
@@ -78,7 +78,10 @@ function DrawerAppBar(props) {
               >
                 {item.icon}
                 <ListItemText primary={item.label} />
+                
               </ListItemButton>
+  
+
             </ListItem>
           );
         })}
@@ -190,7 +193,9 @@ function DrawerAppBar(props) {
             </Box>
 
             {/* Join Button */}
-                     <ButtonJoin/>
+                     
+  <ButtonJoin />
+
             
           </Box>
         </Toolbar>

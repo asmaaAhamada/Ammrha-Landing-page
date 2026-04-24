@@ -43,8 +43,10 @@ export default function Section3() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, 472px)",
-          gap: 3,
+ gridTemplateColumns: {
+          xs: "1fr",
+          md: "repeat(2, 472px)",
+        },         gap: 3,
           justifyContent: "center"
         }}
       >
@@ -52,8 +54,8 @@ export default function Section3() {
          <Card
   key={index}
   sx={{
-    width: "472px",
-    height: "231px",
+
+width: "100%",    height: "231px",
     borderRadius: "16px",
     backgroundColor: theme.palette.primary.card,
     display: "flex",

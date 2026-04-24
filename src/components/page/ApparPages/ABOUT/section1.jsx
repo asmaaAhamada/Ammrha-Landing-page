@@ -37,7 +37,7 @@ export default function Section1() {
             left: '50%',
             transform: 'translateX(-50%)',
             // الشكل البيضوي
-            width: '90%', // عرض الظل بالنسبة لعرض الصورة
+            
             height: '15px', // ارتفاع الظل البيضوي
             borderRadius: '50%',
             // لون الخلفية مع الشفافية
