@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -98,8 +99,8 @@ export default function Communication() {
               التواصل
             </Typography>
             <Stack spacing={1}>
-              <Typography variant="body2" sx={{fontSize:'14px',color:lighttext}}>123 Volunteer Street</Typography>
-              <Typography variant="body2" sx={{fontSize:'14px',color:lighttext}}>info@volunteerhub.org</Typography>
+              <Typography variant="body2" sx={{fontSize:'14px',color:lighttext}}>+963988732372</Typography>
+              <Typography variant="body2" sx={{fontSize:'14px',color:lighttext}}>+963968470410</Typography>
             </Stack>
           </Grid>
 
@@ -143,7 +144,23 @@ export default function Communication() {
                 <InstagramIcon />
               </IconButton>
 
+  <IconButton
+           component="a"
+  href="https://wa.me/963968470410"
+  target="_blank"
+  rel="noopener noreferrer"
+                sx={{
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "1px",
+                  bgcolor:"#25D366",
 
+                  color: "#fff",
+                  
+                }}
+              >
+                <WhatsAppIcon />
+              </IconButton>
             </Stack>
           </Grid>
 

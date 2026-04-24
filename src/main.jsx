@@ -8,11 +8,24 @@ import store from './store'
 import { blue, card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, gray3, gray4, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
 
 function Main() {
+document.body.style.setProperty("font-family", "Inter, sans-serif", "important");
   const [mode, setMode] = useState('light')
 
-  const theme = useMemo(() =>
-    createTheme({
-     
+ const theme = useMemo(() =>
+  createTheme({
+    typography: {
+      // هذا سيطبق الخط على جميع مكونات MUI (الأزرار، العناوين، الخ)
+      fontFamily: '"Inter", sans-serif', 
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: `
+          body {
+            font-family: "Inter", sans-serif !important;
+          }
+        `,
+      },
+    },
     palette: {
   mode,    
   primary: {

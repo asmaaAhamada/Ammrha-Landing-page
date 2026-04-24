@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
@@ -9,6 +9,17 @@ export default function Section2({ id }) {
       const data = detailsData[id];
 
   const theme = useTheme();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) =>
+        prev === data.image2.length - 1 ? 0 : prev + 1
+      );
+    }, 2000); // كل ثانيتين
+
+    return () => clearInterval(interval);
+  }, [data.image2.length]);
 
   return (
     <Box
@@ -79,11 +90,10 @@ export default function Section2({ id }) {
             mb: 4,
           }}
         >
-بينما تتسابق الأنحاء كلها في ميادين الخير، اخترنا أن نكون جزءاً من هذا السباق في ساحة المسكية. بُسطت الموائد، وتوزعت الأيادي بين من يُعدّ أرغفة اللبنة والجبن والمربّى، ومن يتولّى التغليف في القسم المخصّص، حيث يُجهَّز كلُّ كيسٍ بعنايةٍ فائقة.
-وبفضل دعمٍ كريمٍ من عددٍ من الشركات الراعية، وبالتعاون المباشر مع مديرية الأوقاف في عددٍ من الجوامع، استطعنا خلال يومي السادس والعشرين والسابع والعشرين من الشهر أن نجهّز ما مجموعه 8625 وجبة. كلُّ وجبةٍ كانت أشبه بلقمةِ محبةٍ وصلت في أوانها.        </Typography>
-
+            {data.typ} 
+</Typography>
         <a
-  href="https://www.facebook.com/share/r/14bgGx7qkbz/"
+  href={data.link}
   target="_blank"
   rel="noopener noreferrer"
   style={{ textDecoration: "none" }}
@@ -109,7 +119,7 @@ export default function Section2({ id }) {
         {/* الصورة الفعلية */}
         <Box
           component="img"
-                 src={data.image2}
+      src={data.image2[current]}
 
           alt="volunteers"
           sx={{

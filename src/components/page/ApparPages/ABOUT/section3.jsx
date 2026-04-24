@@ -12,7 +12,10 @@ import image2 from '../../../../assets/image/ImageWithFallback-2.png'
 import image3 from '../../../../assets/image/ImageWithFallback-1.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { darkblue, white } from "../../../color-main/color";
+import { useFadeIn } from "./useFadeIn";
 export default function Section3() {
+      const [ref, visible] = useFadeIn();
+
   const theme = useTheme();
 
   const data = [
@@ -36,7 +39,7 @@ export default function Section3() {
   ];
 
   return (
-    <Box sx={{ mt: 4 }}>
+    <Box sx={{ mt: 4 }} ref={ref}>
      
 
       {/* الكروت */}
@@ -64,6 +67,12 @@ width: "100%",    height: "231px",
     
     // 1. تطبيق البوردر كما هو في الصورة (1px ولون rgba(57, 112, 121, 1))
     border: `1px  solid ${darkblue}`,
+      opacity: visible ? 1 : 0,
+              transform: visible
+                ? "translateY(0px)"
+                : "translateY(60px)",
+
+              transition: `all 0.6s ease-out ${index * 0.2}s`,
 
   
     borderRight: `4px solid ${theme.palette.text.textc}`,

@@ -8,7 +8,7 @@ import Join from './components/page/ApparPages/comuncate/comunty'
 import JOIN_US from './components/page/ApparPages/join/Join-Us'
 import Details from './components/page/ApparPages/home/keep/detail/details'
 
-
+import '../src/index.css'
 
 
 
@@ -16,7 +16,7 @@ export default function App({toggleMode, mode}){
  
   return (
     <>
-    
+
        <Routes>
 
     {/* <Route path="/login" element={<Login />} />

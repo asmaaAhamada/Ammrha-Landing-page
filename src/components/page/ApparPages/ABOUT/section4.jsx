@@ -3,7 +3,11 @@ import { card, darkblue } from "../../../color-main/color";
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';export default function Section4() {
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import { useFadeIn } from "./useFadeIn";
+export default function Section4() {
+    const [ref, visible] = useFadeIn();
+
         const theme = useTheme();
     
   const data = [
@@ -14,7 +18,7 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';export default
   ];
 
   return (
-    <Box sx={{mt:16}}>
+    <Box sx={{mt:16}} ref={ref}>
     <Typography
   sx={{
     fontSize: "16px",
@@ -72,7 +76,11 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';export default
     display: "flex",
     flexDirection: "row", // 👈 مهم (أفقي)
     alignItems: "center",
-    borderRadius: "16px",
+    borderRadius: "16px",opacity: visible ? 1 : 0,
+        transform: visible
+          ? "translateY(0px)"
+          : "translateY(40px)",
+        transition: `all 0.5s ease ${index * 0.15}s`,
     
     px: 2
   }}

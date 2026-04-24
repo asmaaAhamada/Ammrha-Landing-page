@@ -5,8 +5,11 @@ import { Box, Typography, Button, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import people from '../../../../assets/image/logo/Logo Container.svg';
+import { useFadeIn } from "./useFadeIn";
 
 export default function Section2() {
+    const [textRef, textVisible] = useFadeIn();
+  const [imgRef, imgVisible] = useFadeIn();
   const theme = useTheme();
 
   return (
@@ -26,11 +29,20 @@ export default function Section2() {
     >
       {/* القسم الأيمن: النص */}
       <Box
+        ref={textRef}
         sx={{
-          flex: "1",mr:9,
-          textAlign: "right", // محاذاة النص لليمين
-          direction: "rtl",   // لضمان تنسيق اللغة العربية
-        }}
+          flex: "1",
+          mr: 9,
+          textAlign: "right",
+          direction: "rtl",
+
+          opacity: textVisible ? 1 : 0,
+          transform: textVisible
+            ? "translateX(0px)"
+            : "translateX(60px)", // من اليمين 👈
+          transition: "all 0.8s ease-out",
+        }}  // لضمان تنسيق اللغة العربية
+        
       >
         {/* عنوان صغير فرعي */}
         <Typography
@@ -94,7 +106,14 @@ export default function Section2() {
           component="img"
           src={people}
           alt="volunteers"
+           ref={imgRef}
+       
           sx={{
+              opacity: imgVisible ? 1 : 0,
+          transform: imgVisible
+            ? "translateX(0px)"
+            : "translateX(-60px)", // من اليسار 👉
+          transition: "all 0.8s ease-out",
             width: { xs: "100%", md: "464px" },
             height: { xs: "200px", md: "320px" },
             borderRadius: "16px",
