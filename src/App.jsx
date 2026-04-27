@@ -8,8 +8,7 @@ import Join from './components/page/ApparPages/comuncate/comunty'
 import JOIN_US from './components/page/ApparPages/join/Join-Us'
 import Details from './components/page/ApparPages/home/keep/detail/details'
 
-import '../src/index.css'
-
+import './index.css';
 
 
 export default function App({toggleMode, mode}){

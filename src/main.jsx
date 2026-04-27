@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -8,24 +8,30 @@ import store from './store'
 import { blue, card, darkblack, darkblue, darkcard, darkgray, darkwhite, gray1, gray2, gray3, gray4, lightgray, lighttext, mainColor, textheder, white } from './components/color-main/color'
 
 function Main() {
-document.body.style.setProperty("font-family", "Inter, sans-serif", "important");
-  const [mode, setMode] = useState('light')
 
+const [mode, setMode] = useState(() => {
+  return localStorage.getItem('themeMode') || 'light'
+})
+useEffect(() => {
+  localStorage.setItem('themeMode', mode)
+}, [mode])
  const theme = useMemo(() =>
   createTheme({
-    typography: {
-      // هذا سيطبق الخط على جميع مكونات MUI (الأزرار، العناوين، الخ)
-      fontFamily: '"Inter", sans-serif', 
-    },
-    components: {
-      MuiCssBaseline: {
-        styleOverrides: `
-          body {
-            font-family: "Inter", sans-serif !important;
-          }
-        `,
+   typography: {
+  fontFamily: "'Tajawal', sans-serif", // تأكد من مطابقة الاسم المعرف في ملف الـ CSS
+  allVariants: {
+    fontFamily: "'Tajawal', sans-serif", // هذا السطر يضمن تطبيق الخط على كل أنواع النصوص بلا استثناء
+  },
+},components: {
+  MuiTypography: {
+    styleOverrides: {
+      root: {
+        fontFamily: "'Tajawal', sans-serif",
       },
     },
+  },
+},
+  
     palette: {
   mode,    
   primary: {

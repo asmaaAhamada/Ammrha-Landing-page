@@ -12,6 +12,7 @@ import image2 from '../../../../assets/image/ImageWithFallback-2.png'
 import image3 from '../../../../assets/image/ImageWithFallback-1.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { darkblue, white } from "../../../color-main/color";
+import { Link } from "react-router-dom";
 export default function Ready() {
   const theme = useTheme();
 
@@ -58,6 +59,7 @@ export default function Ready() {
     مجتمعك اليوم.
   </Box>
 </Typography>
+                <Link to="/Join" style={{ textDecoration: 'none' }}>
 
       <Button
                 variant="contained"
@@ -74,6 +76,7 @@ export default function Ready() {
               >
                 اضغط هنا
               </Button>
+              </Link>
     </Box>
     
               </>

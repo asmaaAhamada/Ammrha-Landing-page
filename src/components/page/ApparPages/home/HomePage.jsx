@@ -77,13 +77,13 @@ export default function HomePage() {
         <Typography
           sx={{
             fontWeight: 700,
-            fontSize: { xs: "2rem", sm: "3rem", md: "64px" }, // استخدام rem لمرونة أكبر
+            fontSize: { xs: "2rem", sm: "3rem", md: "54px" }, // استخدام rem لمرونة أكبر
             color: mainColor,
             maxWidth: "600px",
             lineHeight: 1.2,
           }}
         >
-          أحدث فرقا في مجتمعك
+          أحدث فرقًا في مجتمعك
         </Typography>
 
         {/* Description */}
