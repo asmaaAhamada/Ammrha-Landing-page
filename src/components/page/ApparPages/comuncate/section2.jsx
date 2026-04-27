@@ -85,7 +85,7 @@ export default function Section2() {
                 <Box>
                   <Typography variant="subtitle1" fontWeight="bold"  sx={{             color:theme.palette.text.secondary,fontSize:'13.5px'
 }}    >بريد إلكتروني</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{color:theme.palette.text.textlight}}>info@volunteerhub.org</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{color:theme.palette.text.textlight}}>ammrhafoundationsyria@gmail.com</Typography>
                 </Box>
                
               </Box>
