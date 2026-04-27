@@ -16,8 +16,32 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';import MapIcon from '@mui/icons-material/Map';
 import { darkblue, gray2, gray3, gray4, gray5, white } from '../../../color-main/color';
 
-
+import emailjs from "emailjs-com";
+import React, { useState } from "react";
 export default function Section2() {
+  const [form, setForm] = useState({
+  name: "",
+  email: "",
+  subject: "",
+  message: ""
+});
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.send(
+    "service_69e7j2x",
+    "template_8z2iibi",
+    form,
+    "IwTBu6Firbu-fETDI"
+  ).then(
+    (result) => {
+      alert("تم إرسال الرسالة بنجاح 🚀");
+    },
+    (error) => {
+      alert("صار خطأ في الإرسال");
+    }
+  );
+};
   const theme = useTheme();
 
   // تنسيق مخصص للحقول لتبدو مثل الصورة
@@ -145,20 +169,35 @@ export default function Section2() {
             <Grid container spacing={2} sx={{ mt: 2 }}> 
                  <Grid item xs={12} sm={6}>
                 <Typography sx={{color:theme.palette.text.secondary ,fontSize:'13.5px'}} variant="body2" gutterBottom >بريد إلكتروني</Typography>
-                <TextField fullWidth placeholder="john@example.com" variant="outlined" sx={textFieldStyle} />
+                <TextField 
+                
+                 value={form.email}
+  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                
+                fullWidth placeholder="john@example.com" variant="outlined" sx={textFieldStyle} />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Typography sx={{color:theme.palette.text.secondary ,fontSize:'13.5px'}} variant="body2" gutterBottom >الاسم الكامل</Typography>
-                <TextField fullWidth placeholder="ادخل اسمك" variant="outlined" sx={textFieldStyle} />
+                <TextField 
+                 value={form.name}
+  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                fullWidth placeholder="ادخل اسمك" variant="outlined" sx={textFieldStyle} />
               </Grid>
              
             </Grid>
 
             <Typography variant="body2" gutterBottom sx={{color:theme.palette.text.secondary ,fontSize:'13.5px'}}>العنوان</Typography>
-            <TextField fullWidth placeholder="كيف يمكننا المساعدة؟" variant="outlined" sx={textFieldStyle} />
+            <TextField  
+             value={form.subject}
+  onChange={(e) => setForm({ ...form, subject: e.target.value })}
+            
+            fullWidth placeholder="كيف يمكننا المساعدة؟" variant="outlined" sx={textFieldStyle} />
 
             <Typography variant="body2" gutterBottom sx={{color:theme.palette.text.secondary ,fontSize:'13.5px'}}>الرسالة</Typography>
             <TextField 
+
+             value={form.message}
+  onChange={(e) => setForm({ ...form, message: e.target.value })}
               fullWidth 
               placeholder="اكتب رسالتك هنا..." 
               variant="outlined" 
@@ -168,6 +207,7 @@ export default function Section2() {
             />
 
             <Button 
+            onClick={sendEmail}
               fullWidth 
               variant="contained" 
               sx={{ 
